@@ -1,0 +1,18 @@
+capabilityStatement:
+  software:
+    name: Kardia Pro FHIR Server
+    version: 1.0
+    releaseDate: 2021-06-08
+  publisher: Alivecor
+  copyright: \**API** description \n\nThis is the Hapi fhir  API  used for the Kardia Pro service.\n\nFeatures include:\n\nIt inculdes operation on Patient and Observation resource\n\nCommonly used status codes\n\n**Good codes**:\t\n\n200-\tOK\n\n201-\tResource created\n\n**Bad codes**\t\n\n400-\tBad request, likely malformed JSON or missing required field\n\n404-\tNot found, you are trying to access a resource that is not available at this location\n\n**Very bad codes**\t\n\n500-\tInternal Server Error, an unlikely but potentially anticipated error has occurred\n\n[Copyright AliveCor, Inc.](https://www.alivecor.com/tos/).
+  patient:
+    searchComponent:
+      name:
+        documentation: A server defined search that may match any of the string fields in the HumanName, including family and given
+      identifier:
+        documentation: A patient MRN
+  observation:
+    searchComponent:
+      identifier:
+        documentation: A search that displays all the observations corresponding to a patient's MRN
+

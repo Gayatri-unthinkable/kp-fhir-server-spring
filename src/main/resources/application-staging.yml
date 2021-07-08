@@ -1,0 +1,30 @@
+server:
+  port: 8080
+kpro:
+  url: https://us-kardia-api-staging.herokuapp.com/i/v1/
+  teamId: aexdQsgkXqlpewu1Tb4dcbb80ofl4vje
+  username: harpreet.singh+hapifhir7@unthinkable.co
+  password: Alivecor1
+  socketTimeOut: 6000
+  connectionTimeOut: 7000
+
+logging:
+  file:
+    path: /home/ubuntu/fhirserver/logs
+  level:
+    root: ERROR
+    com.hospital: INFO
+
+
+
+
+
+
+
+
+
+
+
+
+
+

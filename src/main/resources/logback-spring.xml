@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--<property name="LOG_DIR" value="demologs"/>-->
+    <appender name="SAVE-TO-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/alivecor.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n</Pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/log_%d{dd-MM-yyyy}_%i.log</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>5</maxHistory>
+            <totalSizeCap>20GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <springProfile name="dev">
+        <root level="info">
+            <appender-ref ref="SAVE-TO-FILE"/>
+        </root>
+    </springProfile>
+    <springProfile name="staging">
+        <root level="info">
+            <appender-ref ref="SAVE-TO-FILE"/>
+        </root>
+    </springProfile>
+    <springProfile name="production">
+        <root level="info">
+            <appender-ref ref="SAVE-TO-FILE"/>
+        </root>
+    </springProfile>
+</configuration>
